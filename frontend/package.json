@@ -2,6 +2,7 @@
   "name": "lab-verification-system",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://timka1408.github.io/lab-verification-system/",
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
