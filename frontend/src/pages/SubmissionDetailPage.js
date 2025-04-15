@@ -128,7 +128,7 @@ const TeacherReviewForm = ({ submissionId, onSubmit, onCancel, loading }) => {
       newErrors.comments = 'Пікір міндетті';
     }
     if (formData.grade && (isNaN(formData.grade) || formData.grade < 0 || formData.grade > 100)) {
-      newErrors.grade = 'Оценка должна быть числом от 0 до 100';
+      newErrors.grade = 'Баға 0-ден 100-ге дейінгі сан болуы керек';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -166,7 +166,7 @@ const TeacherReviewForm = ({ submissionId, onSubmit, onCancel, loading }) => {
               className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm ${
                 errors.comments ? 'border-red-300' : ''
               }`}
-              placeholder="Ваш комментарий к работе студента..."
+              placeholder="Студенттің жұмысына сіздің пікіріңіз..."
             />
             {errors.comments && (
               <p className="mt-1 text-sm text-red-600">{errors.comments}</p>
@@ -187,7 +187,7 @@ const TeacherReviewForm = ({ submissionId, onSubmit, onCancel, loading }) => {
               className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm ${
                 errors.grade ? 'border-red-300' : ''
               }`}
-              placeholder="Оценка (0-100)"
+              placeholder="Баға (0-100)"
             />
             {errors.grade && (
               <p className="mt-1 text-sm text-red-600">{errors.grade}</p>
@@ -230,10 +230,10 @@ const TeacherReviewForm = ({ submissionId, onSubmit, onCancel, loading }) => {
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     ></path>
                   </svg>
-                  Сохранение...
+                  Сақталуда...
                 </>
               ) : (
-                'Сохранить проверку'
+                'Тексеруді сақтау'
               )}
             </button>
           </div>
@@ -270,10 +270,10 @@ const CodeCommentForm = ({ submissionId, onSubmit, loading }) => {
     if (!formData.line_number) {
       newErrors.line_number = 'Жол нөмірі міндетті';
     } else if (isNaN(formData.line_number) || formData.line_number < 1) {
-      newErrors.line_number = 'Номер строки должен быть положительным числом';
+      newErrors.line_number = 'Жол нөмірі оң сан болуы керек';
     }
     if (!formData.comment) {
-      newErrors.comment = 'Комментарий обязателен';
+      newErrors.comment = 'Пікір міндетті';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -295,10 +295,10 @@ const CodeCommentForm = ({ submissionId, onSubmit, loading }) => {
     <div className="bg-white shadow overflow-hidden sm:rounded-lg mt-6">
       <div className="px-4 py-5 sm:px-6">
         <h3 className="text-lg leading-6 font-medium text-gray-900">
-          Добавить комментарий к коду
+          Кодқа пікір қосу
         </h3>
         <p className="mt-1 max-w-2xl text-sm text-gray-500">
-          Укажите номер строки и комментарий
+          Жол нөмірін және пікірді көрсетіңіз
         </p>
       </div>
       <div className="border-t border-gray-200">
@@ -306,7 +306,7 @@ const CodeCommentForm = ({ submissionId, onSubmit, loading }) => {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
             <div className="sm:col-span-1">
               <label htmlFor="line_number" className="block text-sm font-medium text-gray-700">
-                Строка
+                Жол
               </label>
               <input
                 type="number"
@@ -337,7 +337,7 @@ const CodeCommentForm = ({ submissionId, onSubmit, loading }) => {
                 className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm ${
                   errors.comment ? 'border-red-300' : ''
                 }`}
-                placeholder="Ваш комментарий к этой строке кода..."
+                placeholder="Осы код жолына сіздің пікіріңіз..."
               />
               {errors.comment && (
                 <p className="mt-1 text-sm text-red-600">{errors.comment}</p>
@@ -374,10 +374,10 @@ const CodeCommentForm = ({ submissionId, onSubmit, loading }) => {
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     ></path>
                   </svg>
-                  Добавление...
+                  Қосылуда...
                 </>
               ) : (
-                'Добавить комментарий'
+                'Пікір қосу'
               )}
             </button>
           </div>

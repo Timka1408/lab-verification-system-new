@@ -129,10 +129,10 @@ const FileUploadForm = ({ assignmentId, onSubmit, onCancel, loading }) => {
                     />
                   </svg>
                   <span className="mt-2 text-sm font-medium text-gray-900">
-                    Перетащите файл сюда или нажмите для выбора
+                    Файлды осында сүйреңіз немесе таңдау үшін басыңыз
                   </span>
                   <span className="mt-1 text-xs text-gray-500">
-                    Поддерживаются файлы Python (.py), C++ (.cpp), и другие текстовые форматы
+                    Python (.py), C++ (.cpp) және басқа мәтіндік форматтар қолдау көрсетіледі
                   </span>
                 </div>
               )}
@@ -147,7 +147,7 @@ const FileUploadForm = ({ assignmentId, onSubmit, onCancel, loading }) => {
               onClick={onCancel}
               className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
             >
-              Отмена
+              Болдырмау
             </button>
             <button
               type="submit"
@@ -178,10 +178,10 @@ const FileUploadForm = ({ assignmentId, onSubmit, onCancel, loading }) => {
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     ></path>
                   </svg>
-                  Загрузка...
+                  Жүктелуде...
                 </>
               ) : (
-                'Загрузить работу'
+                'Жұмысты жүктеу'
               )}
             </button>
           </div>

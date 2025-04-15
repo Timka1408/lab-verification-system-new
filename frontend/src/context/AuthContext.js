@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
         const userJson = localStorage.getItem('user');
         
         if (token && userJson) {
-          // В моковом режиме токены не истекают
+          // Мок режимінде токендер мерзімі аяқталмайды
           setUser(JSON.parse(userJson));
         }
       } catch (error) {
@@ -32,12 +32,12 @@ export const AuthProvider = ({ children }) => {
     initializeAuth();
   }, []);
 
-  // В моковом режиме не нужно устанавливать заголовки для axios
+  // Мок режимінде axios үшін тақырыптарды орнату қажет емес
   useEffect(() => {
-    // Пустой эффект для совместимости
+    // Үйлесімділік үшін бос эффект
   }, [user]);
 
-  // Установка пользователя из данных
+  // Деректерден пайдаланушыны орнату
   const setAuthUser = (userData) => {
     try {
       setUser(userData);
@@ -48,12 +48,12 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // В моковом режиме обновление токена не требуется
+  // Мок режимінде токенді жаңарту қажет емес
   const refreshToken = async () => {
     return localStorage.getItem('access_token');
   };
 
-  // Login с использованием мокового API
+  // Мок API пайдаланып жүйеге кіру
   const login = async (email, password) => {
     try {
       setLoading(true);
@@ -61,7 +61,7 @@ export const AuthProvider = ({ children }) => {
       
       const response = await apiService.login({ email, password });
       
-      // Данные пользователя и токены уже сохранены в localStorage в моковом API
+      // Пайдаланушы деректері мен токендер мок API-де localStorage-те сақталған
       setUser(response.data.user);
       return true;
     } catch (error) {
@@ -73,7 +73,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Register с использованием мокового API
+  // Мок API пайдаланып тіркелу
   const register = async (userData) => {
     try {
       setLoading(true);
@@ -81,7 +81,7 @@ export const AuthProvider = ({ children }) => {
       
       const response = await apiService.register(userData);
       
-      // Данные пользователя и токены уже сохранены в localStorage в моковом API
+      // Пайдаланушы деректері мен токендер мок API-де localStorage-те сақталған
       setUser(response.data.user);
       return true;
     } catch (error) {
@@ -93,7 +93,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Logout
+  // Жүйеден шығу
   const logout = () => {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');

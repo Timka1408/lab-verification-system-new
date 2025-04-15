@@ -1,4 +1,4 @@
-// Моковые данные для локальной работы без бэкенда
+// Бэкендсіз жергілікті жұмыс үшін мок деректер
 const mockUsers = [
   { 
     id: 1, 
@@ -21,16 +21,16 @@ const mockUsers = [
 const mockAssignments = [
   {
     id: 1,
-    title: 'Лабораторная работа №1',
-    description: 'Разработка простого алгоритма',
+    title: 'Зертханалық жұмыс №1',
+    description: 'Қарапайым алгоритмді әзірлеу',
     deadline: '2025-05-01T00:00:00Z',
     created_at: '2025-04-01T00:00:00Z',
     created_by: 2
   },
   {
     id: 2,
-    title: 'Лабораторная работа №2',
-    description: 'Работа с массивами и циклами',
+    title: 'Зертханалық жұмыс №2',
+    description: 'Массивтер және циклдермен жұмыс',
     deadline: '2025-05-15T00:00:00Z',
     created_at: '2025-04-05T00:00:00Z',
     created_by: 2
@@ -42,11 +42,11 @@ const mockSubmissions = [
     id: 1,
     assignment: 1,
     student_id: 1,
-    student_name: 'Студент Тестовый',
+    student_name: 'Студент Тестілік',
     file_url: '/mock-files/submission1.py',
     status: 'verified',
     score: 85,
-    feedback: 'Хорошая работа, но есть небольшие ошибки',
+    feedback: 'Жақсы жұмыс, бірақ шағын қателер бар',
     submitted_at: '2025-04-10T10:00:00Z',
     verification_results: {
       syntax_errors: [],
@@ -57,7 +57,7 @@ const mockSubmissions = [
     id: 2,
     assignment: 2,
     student_id: 1,
-    student_name: 'Студент Тестовый',
+    student_name: 'Студент Тестілік',
     file_url: '/mock-files/submission2.py',
     status: 'pending',
     score: null,
@@ -72,13 +72,13 @@ const mockComments = [
     id: 1,
     submission: 1,
     line_number: 5,
-    text: 'Здесь можно использовать более эффективный алгоритм',
+    text: 'Мұнда неғұрлым тиімді алгоритмді пайдалануға болады',
     author: 'Оқытушы Тестовый',
     created_at: '2025-04-11T09:15:00Z'
   }
 ];
 
-// Вспомогательная функция для имитации асинхронного ответа
+// Асинхронды жауапты имитациялау үшін көмекші функция
 const mockResponse = (data, delay = 300) => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -87,7 +87,7 @@ const mockResponse = (data, delay = 300) => {
   });
 };
 
-// Вспомогательная функция для имитации ошибки
+// Қатені имитациялау үшін көмекші функция
 const mockError = (status, message, delay = 300) => {
   return new Promise((_, reject) => {
     setTimeout(() => {
@@ -101,23 +101,23 @@ const mockError = (status, message, delay = 300) => {
   });
 };
 
-// API service object с моковыми методами для локальной работы
+// Жергілікті жұмыс үшін мок әдістері бар API қызмет объектісі
 const apiService = {
   // Auth
   login: (credentials) => {
     const user = mockUsers.find(u => u.email === credentials.email);
-    if (user && credentials.password) { // В моковом режиме любой пароль подойдет
+    if (user && credentials.password) { // Мок режимінде кез келген құпия сөз жарайды
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('access_token', 'mock-token-' + Date.now());
       localStorage.setItem('refresh_token', 'mock-refresh-token-' + Date.now());
       return mockResponse({ access: 'mock-token', refresh: 'mock-refresh-token', user });
     }
-    return mockError(401, 'Неверные учетные данные');
+    return mockError(401, 'Қате тіркелгі деректері');
   },
   
   register: (userData) => {
     if (mockUsers.some(u => u.email === userData.email)) {
-      return mockError(400, 'Пользователь с таким email уже существует');
+      return mockError(400, 'Мұндай email бар пайдаланушы әлдеқашан бар');
     }
     const newUser = {
       id: mockUsers.length + 1,
@@ -236,7 +236,7 @@ const apiService = {
     if (submission) {
       return mockResponse(submission);
     }
-    return mockError(404, 'Работа не найдена');
+    return mockError(404, 'Жұмыс табылмады');
   },
   
   createSubmission: (data) => {
@@ -266,7 +266,7 @@ const apiService = {
       };
       return mockResponse(mockSubmissions[index]);
     }
-    return mockError(404, 'Работа не найдена');
+    return mockError(404, 'Жұмыс табылмады');
   },
   
   reviewSubmission: (id, data) => {
@@ -277,7 +277,7 @@ const apiService = {
       mockSubmissions[index].feedback = data.feedback;
       return mockResponse(mockSubmissions[index]);
     }
-    return mockError(404, 'Работа не найдена');
+    return mockError(404, 'Жұмыс табылмады');
   },
   
   addCodeComment: (id, data) => {
@@ -293,14 +293,14 @@ const apiService = {
     return mockResponse(newComment);
   },
   
-  // Удаление работы
+  // Жұмысты жою
   deleteSubmission: (id) => {
     const index = mockSubmissions.findIndex(s => s.id === parseInt(id));
     if (index !== -1) {
-      // Удаляем работу
+      // Жұмысты жоямыз
       mockSubmissions.splice(index, 1);
       
-      // Удаляем все комментарии, связанные с этой работой
+      // Осы жұмыспен байланысты барлық пікірлерді жоямыз
       const commentIndices = mockComments
         .map((comment, idx) => comment.submission === parseInt(id) ? idx : -1)
         .filter(idx => idx !== -1)
