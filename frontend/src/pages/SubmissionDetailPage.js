@@ -510,7 +510,7 @@ const SubmissionDetailPage = () => {
       setError(null);
       await apiService.deleteSubmission(id);
       
-      // Перенаправляем пользователя на страницу со списком работ
+      // Пайдаланушыны жұмыстар тізімі бар бетке қайта бағыттаймыз
       navigate('/submissions');
     } catch (error) {
       console.error('Error deleting submission:', error);
@@ -605,7 +605,7 @@ const SubmissionDetailPage = () => {
               {showReviewForm ? 'Болдырмау' : 'Жұмысты тексеру'}
             </button>
           )}
-          {/* Кнопка удаления работы (только для преподавателей) */}
+          {/* Жұмысты жою түймесі (тек оқытушылар үшін) */}
           {(user?.role === 'teacher' || user?.role === 'admin') && (
             <button
               onClick={handleDeleteSubmission}

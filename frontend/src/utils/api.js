@@ -198,10 +198,10 @@ const apiService = {
         .filter(idx => idx !== -1)
         .sort((a, b) => b - a); // Сортируем по убыванию, чтобы удалять с конца
       
-      // Собираем ID работ для удаления комментариев
+      // Пікірлерді жою үшін жұмыстардың ID-ін жинаймыз
       const submissionIds = submissionIndices.map(idx => mockSubmissions[idx].id);
       
-      // Удаляем работы
+      // Жұмыстарды жоямыз
       submissionIndices.forEach(idx => {
         mockSubmissions.splice(idx, 1);
       });

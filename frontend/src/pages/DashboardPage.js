@@ -147,17 +147,17 @@ const DashboardPage = () => {
           <div className="px-4 py-5 sm:px-6 flex justify-between items-center">
             <div>
               <h3 className="text-lg leading-6 font-medium text-gray-900">
-                Последние задания
+                Соңғы тапсырмалар
               </h3>
               <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                Недавно созданные задания для лабораторных работ
+                Жақында жасалған зертханалық жұмыстарға арналған тапсырмалар
               </p>
             </div>
             <Link
               to="/assignments"
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-primary-700 bg-primary-100 hover:bg-primary-200"
             >
-              Все задания
+              Барлық тапсырмалар
             </Link>
           </div>
           <ul className="divide-y divide-gray-200">
@@ -210,17 +210,17 @@ const DashboardPage = () => {
           <div className="px-4 py-5 sm:px-6 flex justify-between items-center">
             <div>
               <h3 className="text-lg leading-6 font-medium text-gray-900">
-                Последние работы
+                Соңғы жұмыстар
               </h3>
               <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                Недавно загруженные лабораторные работы
+                Жақында жүктелген зертханалық жұмыстар
               </p>
             </div>
             <Link
               to="/submissions"
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-primary-700 bg-primary-100 hover:bg-primary-200"
             >
-              Все работы
+              Барлық жұмыстар
             </Link>
           </div>
           <ul className="divide-y divide-gray-200">
