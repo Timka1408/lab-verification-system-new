@@ -33,7 +33,7 @@ lab-verification-system/
 - **Тексеру құралдары**:
   - Python: pylint
   - C++: g++ компиляторы
-  - Плагиат: MOSS (Measure of Software Similarity)
+  - Плагиат: MOSS (Бағдарламалық жасақтама ұқсастығын өлшеу)
 
 ## Орнату нұсқаулары
 

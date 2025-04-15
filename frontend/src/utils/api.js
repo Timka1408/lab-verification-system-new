@@ -4,7 +4,7 @@ const mockUsers = [
     id: 1, 
     email: 'student@example.com', 
     first_name: 'Студент', 
-    last_name: 'Тестовый', 
+    last_name: 'Тестілік', 
     role: 'student',
     group: 'АЖ-31'
   },
@@ -12,7 +12,7 @@ const mockUsers = [
     id: 2, 
     email: 'teacher@example.com', 
     first_name: 'Оқытушы', 
-    last_name: 'Тестовый', 
+    last_name: 'Тестілік', 
     role: 'teacher',
     group: ''
   }
@@ -73,7 +73,7 @@ const mockComments = [
     submission: 1,
     line_number: 5,
     text: 'Мұнда неғұрлым тиімді алгоритмді пайдалануға болады',
-    author: 'Оқытушы Тестовый',
+    author: 'Оқытушы Тестілік',
     created_at: '2025-04-11T09:15:00Z'
   }
 ];
@@ -117,7 +117,7 @@ const apiService = {
   
   register: (userData) => {
     if (mockUsers.some(u => u.email === userData.email)) {
-      return mockError(400, 'Мұндай email бар пайдаланушы әлдеқашан бар');
+      return mockError(400, 'Мұндай email бар құпия сөз әлдеқашан бар');
     }
     const newUser = {
       id: mockUsers.length + 1,
@@ -196,7 +196,7 @@ const apiService = {
       const submissionIndices = mockSubmissions
         .map((submission, idx) => submission.assignment === parseInt(id) ? idx : -1)
         .filter(idx => idx !== -1)
-        .sort((a, b) => b - a); // Сортируем по убыванию, чтобы удалять с конца
+        .sort((a, b) => b - a); // Соңынан жою үшін кему ретімен сұрыптаймыз
       
       // Пікірлерді жою үшін жұмыстардың ID-ін жинаймыз
       const submissionIds = submissionIndices.map(idx => mockSubmissions[idx].id);
@@ -304,7 +304,7 @@ const apiService = {
       const commentIndices = mockComments
         .map((comment, idx) => comment.submission === parseInt(id) ? idx : -1)
         .filter(idx => idx !== -1)
-        .sort((a, b) => b - a); // Сортируем по убыванию, чтобы удалять с конца
+        .sort((a, b) => b - a); // Соңынан жою үшін кему ретімен сұрыптаймыз
       
       commentIndices.forEach(idx => {
         mockComments.splice(idx, 1);

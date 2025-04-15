@@ -157,7 +157,7 @@ const SubmissionPage = () => {
                     <div className="mt-2">
                       {submission.has_verification && (
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 mr-2">
-                          Синтаксис тексеру
+                          Синтаксисті тексеру
                         </span>
                       )}
                       {submission.has_review && (
