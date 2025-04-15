@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/lab-verification-system/static/css/main.2ee835f8.css",
-    "main.js": "/lab-verification-system/static/js/main.faf5b56c.js",
-    "index.html": "/lab-verification-system/index.html",
-    "main.2ee835f8.css.map": "/lab-verification-system/static/css/main.2ee835f8.css.map",
-    "main.faf5b56c.js.map": "/lab-verification-system/static/js/main.faf5b56c.js.map"
+    "main.css": "/lab-verification-system-new/static/css/main.2ee835f8.css",
+    "main.js": "/lab-verification-system-new/static/js/main.faf5b56c.js",
+    "index.html": "/lab-verification-system-new/index.html",
+    "main.2ee835f8.css.map": "/lab-verification-system-new/static/css/main.2ee835f8.css.map",
+    "main.faf5b56c.js.map": "/lab-verification-system-new/static/js/main.faf5b56c.js.map"
   },
   "entrypoints": [
     "static/css/main.2ee835f8.css",
