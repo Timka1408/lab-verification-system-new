@@ -2,10 +2,10 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 
-// Layout Components
+// Құрылым компоненттері
 import Layout from './components/Layout';
 
-// Pages
+// Беттер
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
@@ -15,7 +15,7 @@ import SubmissionPage from './pages/SubmissionPage';
 import SubmissionDetailPage from './pages/SubmissionDetailPage';
 import ProfilePage from './pages/ProfilePage';
 
-// Protected Route Component
+// Қорғалған бағыт компоненті
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
   
@@ -34,7 +34,7 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-// Teacher Only Route Component
+// Тек оқытушыға арналған бағыт компоненті
 const TeacherRoute = ({ children }) => {
   const { user, loading } = useAuth();
   
@@ -56,11 +56,11 @@ const TeacherRoute = ({ children }) => {
 function App() {
   return (
     <Routes>
-      {/* Public Routes */}
+      {/* Жалпыға қолжетімді бағыттар */}
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       
-      {/* Protected Routes */}
+      {/* Қорғалған бағыттар */}
       <Route path="/" element={
         <ProtectedRoute>
           <Layout />
@@ -75,7 +75,7 @@ function App() {
         <Route path="profile" element={<ProfilePage />} />
       </Route>
       
-      {/* Catch All Route */}
+      {/* Барлық қалған бағыттар */}
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );

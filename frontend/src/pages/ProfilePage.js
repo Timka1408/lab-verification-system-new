@@ -58,11 +58,11 @@ const ProfilePage = () => {
       
       await apiService.updateProfile(profileData);
       
-      setSuccess('Профиль успешно обновлен');
+      setSuccess('Профиль сәтті жаңартылды');
       setLoading(false);
     } catch (error) {
       console.error('Error updating profile:', error);
-      setError('Не удалось обновить профиль. Пожалуйста, попробуйте позже.');
+      setError('Профильді жаңарту мүмкін болмады. Кейінірек қайталап көріңіз.');
       setLoading(false);
     }
   };
@@ -72,12 +72,12 @@ const ProfilePage = () => {
     
     // Validate passwords
     if (passwordData.new_password !== passwordData.confirm_password) {
-      setPasswordError('Пароли не совпадают');
+      setPasswordError('Құпия сөздер сәйкес келмейді');
       return;
     }
     
     if (passwordData.new_password.length < 8) {
-      setPasswordError('Новый пароль должен содержать минимум 8 символов');
+      setPasswordError('Жаңа құпия сөз кемінде 8 таңбадан тұруы керек');
       return;
     }
     
@@ -98,11 +98,11 @@ const ProfilePage = () => {
         confirm_password: '',
       });
       
-      setPasswordSuccess('Пароль успешно изменен');
+      setPasswordSuccess('Құпия сөз сәтті өзгертілді');
       setPasswordLoading(false);
     } catch (error) {
       console.error('Error changing password:', error);
-      setPasswordError('Не удалось изменить пароль. Проверьте правильность текущего пароля.');
+      setPasswordError('Құпия сөзді өзгерту мүмкін болмады. Ағымдағы құпия сөздің дұрыстығын тексеріңіз.');
       setPasswordLoading(false);
     }
   };
@@ -112,7 +112,7 @@ const ProfilePage = () => {
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Профиль</h1>
         <p className="mt-1 text-sm text-gray-500">
-          Управление вашим профилем и настройками аккаунта
+          Профиліңізді және тіркелгі параметрлерін басқару
         </p>
       </div>
 
@@ -120,10 +120,10 @@ const ProfilePage = () => {
       <div className="bg-white shadow overflow-hidden sm:rounded-lg">
         <div className="px-4 py-5 sm:px-6">
           <h3 className="text-lg leading-6 font-medium text-gray-900">
-            Информация профиля
+            Профиль ақпараты
           </h3>
           <p className="mt-1 max-w-2xl text-sm text-gray-500">
-            Ваши персональные данные
+            Сіздің жеке деректеріңіз
           </p>
         </div>
         <div className="border-t border-gray-200">
@@ -145,7 +145,7 @@ const ProfilePage = () => {
               <div className="bg-green-50 p-4 rounded-md">
                 <div className="flex">
                   <div className="ml-3">
-                    <h3 className="text-sm font-medium text-green-800">Успех</h3>
+                    <h3 className="text-sm font-medium text-green-800">Сәтті</h3>
                     <div className="mt-2 text-sm text-green-700">
                       <p>{success}</p>
                     </div>
@@ -284,7 +284,7 @@ const ProfilePage = () => {
               <div className="bg-green-50 p-4 rounded-md">
                 <div className="flex">
                   <div className="ml-3">
-                    <h3 className="text-sm font-medium text-green-800">Успех</h3>
+                    <h3 className="text-sm font-medium text-green-800">Сәтті</h3>
                     <div className="mt-2 text-sm text-green-700">
                       <p>{passwordSuccess}</p>
                     </div>
@@ -296,7 +296,7 @@ const ProfilePage = () => {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label htmlFor="old_password" className="block text-sm font-medium text-gray-700">
-                  Текущий пароль
+                  Ағымдағы құпия сөз
                 </label>
                 <input
                   type="password"
@@ -312,7 +312,7 @@ const ProfilePage = () => {
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
                     <label htmlFor="new_password" className="block text-sm font-medium text-gray-700">
-                      Новый пароль
+                      Жаңа құпия сөз
                     </label>
                     <input
                       type="password"
@@ -327,7 +327,7 @@ const ProfilePage = () => {
                   </div>
                   <div>
                     <label htmlFor="confirm_password" className="block text-sm font-medium text-gray-700">
-                      Подтверждение пароля
+                      Құпия сөзді растау
                     </label>
                     <input
                       type="password"
@@ -372,10 +372,10 @@ const ProfilePage = () => {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       ></path>
                     </svg>
-                    Изменение...
+                    Өзгертілуде...
                   </>
                 ) : (
-                  'Изменить пароль'
+                  'Құпия сөзді өзгерту'
                 )}
               </button>
             </div>
@@ -387,7 +387,7 @@ const ProfilePage = () => {
       <div className="bg-white shadow overflow-hidden sm:rounded-lg">
         <div className="px-4 py-5 sm:px-6">
           <h3 className="text-lg leading-6 font-medium text-gray-900">
-            Действия с аккаунтом
+            Тіркелгі әрекеттері
           </h3>
         </div>
         <div className="border-t border-gray-200 p-4">
@@ -395,7 +395,7 @@ const ProfilePage = () => {
             onClick={logout}
             className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
           >
-            Выйти из аккаунта
+            Тіркелгіден шығу
           </button>
         </div>
       </div>

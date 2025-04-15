@@ -37,7 +37,7 @@ const FileUploadForm = ({ assignmentId, onSubmit, onCancel, loading }) => {
   const handleFile = (file) => {
     // Check file size (10MB max)
     if (file.size > 10 * 1024 * 1024) {
-      setError('Файл слишком большой. Максимальный размер: 10MB');
+      setError('Файл тым үлкен. Максималды өлшемі: 10MB');
       return;
     }
     setFile(file);
@@ -47,7 +47,7 @@ const FileUploadForm = ({ assignmentId, onSubmit, onCancel, loading }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!file) {
-      setError('Пожалуйста, выберите файл для загрузки');
+      setError('Жүктеу үшін файлды таңдаңыз');
       return;
     }
     onSubmit({ assignment: assignmentId, file });
@@ -57,10 +57,10 @@ const FileUploadForm = ({ assignmentId, onSubmit, onCancel, loading }) => {
     <div className="bg-white shadow overflow-hidden sm:rounded-lg">
       <div className="px-4 py-5 sm:px-6">
         <h3 className="text-lg leading-6 font-medium text-gray-900">
-          Загрузить работу
+          Жұмысты жүктеу
         </h3>
         <p className="mt-1 max-w-2xl text-sm text-gray-500">
-          Загрузите файл с вашей лабораторной работой
+          Зертханалық жұмысыңыздың файлын жүктеңіз
         </p>
       </div>
       <div className="border-t border-gray-200">
@@ -109,7 +109,7 @@ const FileUploadForm = ({ assignmentId, onSubmit, onCancel, loading }) => {
                     className="mt-2 text-sm text-red-600 hover:text-red-500"
                     onClick={() => setFile(null)}
                   >
-                    Удалить
+                    Жою
                   </button>
                 </div>
               ) : (
@@ -242,7 +242,7 @@ const AssignmentDetailPage = () => {
     }
   };
   
-  // Функция для удаления задания
+  // Тапсырманы жою функциясы
   const handleDeleteAssignment = async () => {
     if (!window.confirm('Сіз шынымен бұл тапсырманы жоюғыңыз келе ме? Барлық жұмыстар да жойылады. Бұл әрекетті кері қайтару мүмкін емес.')) {
       return;

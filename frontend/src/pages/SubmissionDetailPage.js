@@ -499,7 +499,7 @@ const SubmissionDetailPage = () => {
     }
   };
   
-  // Функция для удаления работы
+  // Жұмысты жою функциясы
   const handleDeleteSubmission = async () => {
     if (!window.confirm('Сіз шынымен бұл жұмысты жоюғыңыз келе ме? Бұл әрекетті кері қайтару мүмкін емес.')) {
       return;
