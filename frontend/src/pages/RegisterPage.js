@@ -116,7 +116,7 @@ const RegisterPage = () => {
                 className={`appearance-none rounded-none relative block w-full px-3 py-2 border ${
                   errors.first_name ? 'border-red-300' : 'border-gray-300'
                 } placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm`}
-                placeholder="Имя"
+                placeholder="Аты"
                 value={formData.first_name}
                 onChange={handleChange}
               />
@@ -137,7 +137,7 @@ const RegisterPage = () => {
                 className={`appearance-none rounded-none relative block w-full px-3 py-2 border ${
                   errors.last_name ? 'border-red-300' : 'border-gray-300'
                 } placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm`}
-                placeholder="Фамилия"
+                placeholder="Тегі"
                 value={formData.last_name}
                 onChange={handleChange}
               />
@@ -169,7 +169,7 @@ const RegisterPage = () => {
             {formData.role === 'student' && (
               <div>
                 <label htmlFor="group" className="sr-only">
-                  Группа
+                  Топ
                 </label>
                 <input
                   id="group"

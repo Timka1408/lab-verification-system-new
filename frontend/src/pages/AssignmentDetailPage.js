@@ -220,7 +220,7 @@ const AssignmentDetailPage = () => {
         setLoading(false);
       } catch (error) {
         console.error('Error fetching assignment data:', error);
-        setError('Не удалось загрузить данные задания. Пожалуйста, попробуйте позже.');
+        setError('Тапсырма деректерін жүктеу мүмкін болмады. Өтінеміз, кейінірек қайталап көріңіз.');
         setLoading(false);
       }
     };

@@ -74,7 +74,7 @@ const Layout = () => {
                       to="/profile"
                       className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100"
                     >
-                      Профиль
+                      Профильдер
                     </NavLink>
                     <button
                       onClick={handleLogout}

@@ -426,7 +426,7 @@ const SubmissionDetailPage = () => {
         setLoading(false);
       } catch (error) {
         console.error('Error fetching submission data:', error);
-        setError('Не удалось загрузить данные работы. Пожалуйста, попробуйте позже.');
+        setError('Жұмыс деректерін жүктеу мүмкін болмады. Өтінеміз, кейінірек қайталап көріңіз.');
         setLoading(false);
       }
     };
@@ -477,7 +477,7 @@ const SubmissionDetailPage = () => {
       setReviewing(false);
     } catch (error) {
       console.error('Error reviewing submission:', error);
-      setError('Не удалось сохранить проверку. Пожалуйста, попробуйте позже.');
+      setError('Тексеруді сақтау мүмкін болмады. Өтінеміз, кейінірек қайталап көріңіз.');
       setReviewing(false);
     }
   };

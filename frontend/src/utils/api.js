@@ -153,7 +153,7 @@ const apiService = {
     return mockResponse(updatedUser);
   },
   
-  changePassword: () => mockResponse({ detail: 'Пароль успешно изменен' }),
+  changePassword: () => mockResponse({ detail: 'Құпия сөз сәтті өзгертілді' }),
   
   // Assignments
   getAssignments: () => mockResponse(mockAssignments),
@@ -163,7 +163,7 @@ const apiService = {
     if (assignment) {
       return mockResponse(assignment);
     }
-    return mockError(404, 'Задание не найдено');
+    return mockError(404, 'Тапсырма табылмады');
   },
   
   createAssignment: (data) => {
@@ -183,16 +183,16 @@ const apiService = {
       mockAssignments[index] = { ...mockAssignments[index], ...data };
       return mockResponse(mockAssignments[index]);
     }
-    return mockError(404, 'Задание не найдено');
+    return mockError(404, 'Тапсырма табылмады');
   },
   
   deleteAssignment: (id) => {
     const index = mockAssignments.findIndex(a => a.id === parseInt(id));
     if (index !== -1) {
-      // Удаляем задание
+      // Тапсырманы жоямыз
       mockAssignments.splice(index, 1);
       
-      // Находим и удаляем все работы, связанные с этим заданием
+      // Осы тапсырмамен байланысты барлық жұмыстарды табамыз және жоямыз
       const submissionIndices = mockSubmissions
         .map((submission, idx) => submission.assignment === parseInt(id) ? idx : -1)
         .filter(idx => idx !== -1)
@@ -206,7 +206,7 @@ const apiService = {
         mockSubmissions.splice(idx, 1);
       });
       
-      // Удаляем комментарии, связанные с удаленными работами
+      // Жойылған жұмыстармен байланысты пікірлерді жоямыз
       for (let submissionId of submissionIds) {
         const commentIndices = mockComments
           .map((comment, idx) => comment.submission === submissionId ? idx : -1)

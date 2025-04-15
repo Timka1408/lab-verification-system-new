@@ -132,7 +132,7 @@ const ProfilePage = () => {
               <div className="bg-red-50 p-4 rounded-md">
                 <div className="flex">
                   <div className="ml-3">
-                    <h3 className="text-sm font-medium text-red-800">Ошибка</h3>
+                    <h3 className="text-sm font-medium text-red-800">Қате</h3>
                     <div className="mt-2 text-sm text-red-700">
                       <p>{error}</p>
                     </div>
@@ -157,7 +157,7 @@ const ProfilePage = () => {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
-                  Имя
+                  Аты
                 </label>
                 <input
                   type="text"
@@ -170,7 +170,7 @@ const ProfilePage = () => {
               </div>
               <div>
                 <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">
-                  Фамилия
+                  Тегі
                 </label>
                 <input
                   type="text"
@@ -195,13 +195,13 @@ const ProfilePage = () => {
                   disabled
                 />
                 <p className="mt-1 text-xs text-gray-500">
-                  Email нельзя изменить
+                  Email өзгертуге болмайды
                 </p>
               </div>
               {user?.role === 'student' && (
                 <div>
                   <label htmlFor="group" className="block text-sm font-medium text-gray-700">
-                    Группа
+                    Топ
                   </label>
                   <input
                     type="text"
@@ -244,10 +244,10 @@ const ProfilePage = () => {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       ></path>
                     </svg>
-                    Сохранение...
+                    Сақталуда...
                   </>
                 ) : (
-                  'Сохранить изменения'
+                  'Өзгерістерді сақтау'
                 )}
               </button>
             </div>
@@ -259,10 +259,10 @@ const ProfilePage = () => {
       <div className="bg-white shadow overflow-hidden sm:rounded-lg">
         <div className="px-4 py-5 sm:px-6">
           <h3 className="text-lg leading-6 font-medium text-gray-900">
-            Изменить пароль
+            Құпия сөзді өзгерту
           </h3>
           <p className="mt-1 max-w-2xl text-sm text-gray-500">
-            Обновите ваш пароль для безопасности
+            Қауіпсіздік үшін құпия сөзіңізді жаңартыңыз
           </p>
         </div>
         <div className="border-t border-gray-200">
@@ -271,7 +271,7 @@ const ProfilePage = () => {
               <div className="bg-red-50 p-4 rounded-md">
                 <div className="flex">
                   <div className="ml-3">
-                    <h3 className="text-sm font-medium text-red-800">Ошибка</h3>
+                    <h3 className="text-sm font-medium text-red-800">Қате</h3>
                     <div className="mt-2 text-sm text-red-700">
                       <p>{passwordError}</p>
                     </div>

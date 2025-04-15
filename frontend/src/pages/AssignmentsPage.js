@@ -178,7 +178,7 @@ const AssignmentsPage = () => {
       setLoading(false);
     } catch (error) {
       console.error('Error fetching assignments:', error);
-      setError('Не удалось загрузить задания. Пожалуйста, попробуйте позже.');
+      setError('Тапсырмаларды жүктеу мүмкін болмады. Өтінеміз, кейінірек қайталап көріңіз.');
       setLoading(false);
     }
   };
